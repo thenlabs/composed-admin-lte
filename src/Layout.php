@@ -16,7 +16,7 @@ class Layout extends AbstractView
     /**
      * @Data
      */
-    protected $title = 'ComposedAdminLte';
+    protected $title;
 
     public function getOwnDependencies(): array
     {

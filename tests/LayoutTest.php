@@ -20,7 +20,7 @@ testCase('LayoutTest.php', function () {
         createMacro('the view of the layout', function (Closure $tests) {
             testCase('the view of the layout', function () use ($tests) {
                 setUp(function () {
-                    $this->layoutView = new HtmlPage($this->layout->render());
+                    $this->layoutView = new HtmlPageCrawler($this->layout->render());
                 });
 
                 $tests();
@@ -31,6 +31,38 @@ testCase('LayoutTest.php', function () {
             $this->assertViewHasData('title', $this->layout);
         });
 
+        useMacro('the view of the layout', function () {
+            testCase(function () {
+                test('has the expected styles', function () {
+                    $expected = [
+                        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                        'bower_components/font-awesome/css/font-awesome.min.css',
+                        'bower_components/Ionicons/css/ionicons.min.css',
+                        'thenfriends/composed-admin-lte/css/AdminLTE.min.css',
+                        'thenfriends/composed-admin-lte/css/skins/skin-blue.min.css',
+                    ];
+
+                    foreach ($expected as $uri) {
+                        $this->assertCount(1, $this->layoutView->filter("link[href$=\"{$uri}\"]"));
+                    }
+                });
+            });
+
+            testCase(function () {
+                test('has the expected scripts', function () {
+                    $expected = [
+                        'bower_components/jquery/dist/jquery.min.js',
+                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                        'thenfriends/composed-admin-lte/js/adminlte.min.js',
+                    ];
+
+                    foreach ($expected as $uri) {
+                        $this->assertCount(1, $this->layoutView->filter("script[src$=\"{$uri}\"]"));
+                    }
+                });
+            });
+        });
+
         testCase('sets a title to the layout', function () {
             setUp(function () {
                 $this->title = uniqid();
@@ -39,7 +71,8 @@ testCase('LayoutTest.php', function () {
 
             useMacro('the view of the layout', function () {
                 test('has the expected title', function () {
-                    $this->assertEquals($this->title, $this->layoutView->getTitle());
+                    $page = new HtmlPage($this->layoutView->saveHTML());
+                    $this->assertEquals($this->title, $page->getTitle());
                 });
             });
         });
