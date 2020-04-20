@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace ThenFriends\ComposedAdminLte;
 
 use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\Asset\Stylesheet;
+use ThenLabs\ComposedViews\Asset\Script;
 use ThenLabs\ComposedViews\Annotation\Data;
 
 /**
@@ -16,6 +18,23 @@ class Layout extends AbstractView
      */
     protected $title = 'ComposedAdminLte';
 
+    public function getOwnDependencies(): array
+    {
+        return [
+            // styles
+            new Stylesheet('bootstrap-css', null, 'bower_components/bootstrap/dist/css/bootstrap.min.css'),
+            new Stylesheet('fontAwesome-css', null, 'bower_components/font-awesome/css/font-awesome.min.css'),
+            new Stylesheet('ionicons-css', null, 'bower_components/Ionicons/css/ionicons.min.css'),
+            new Stylesheet('adminlte-css', null, 'thenfriends/composed-admin-lte/css/AdminLTE.min.css'),
+            new Stylesheet('adminlte-skin-css', null, 'thenfriends/composed-admin-lte/css/skins/skin-blue.min.css'),
+
+            // scripts
+            new Script('jquery', null, 'bower_components/jquery/dist/jquery.min.js'),
+            new Script('bootstrap-js', null, 'bower_components/bootstrap/dist/js/bootstrap.min.js'),
+            new Script('adminlte-js', null, 'thenfriends/composed-admin-lte/js/adminlte.min.js'),
+        ];
+    }
+
     public function getView(array $data = []): string
     {
         return <<<HTML
@@ -27,17 +46,7 @@ class Layout extends AbstractView
   <title>{$this->title}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  {$this->renderStyles()}
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -410,18 +419,7 @@ desired effect
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+{$this->renderScripts()}
 </body>
 </html>
 HTML;
