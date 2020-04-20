@@ -126,7 +126,7 @@ testCase('LayoutTest.php', function () {
             });
         });
 
-        testCase('sets a skin to the layout', function () {
+        testCase('sets a new skin value to the layout', function () {
             setUp(function () {
                 $values = SKIN_VALUES;
                 unset($values[0]); // remove blue
@@ -137,9 +137,28 @@ testCase('LayoutTest.php', function () {
 
             useMacro('the view of the layout', function () {
                 useMacro('the body element', function () {
-                    test('has the expected skin class', function () {
+                    test('has the expected skin css class', function () {
                         $this->assertFalse($this->body->hasClass('skin-blue'));
                         $this->assertTrue($this->body->hasClass('skin-'.$this->value));
+                    });
+                });
+            });
+        });
+
+        testCase('sets a new layoutType value to the layout', function () {
+            setUp(function () {
+                $values = LAYOUT_TYPE_VALUES;
+                unset($values[0]); // remove fixed
+                $key = array_rand($values);
+                $this->value = $values[$key];
+                $this->layout->setLayoutType($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                useMacro('the body element', function () {
+                    test('has the expected layout type css class', function () {
+                        $this->assertFalse($this->body->hasClass('fixed'));
+                        $this->assertTrue($this->body->hasClass($this->value));
                     });
                 });
             });
