@@ -19,12 +19,12 @@ class Layout extends AbstractView
     protected $title;
 
     /**
-     * @Data
+     * @Data(values={"blue", "black", "purple", "yellow", "red", "green"})
      */
     protected $skin = 'blue';
 
     /**
-     * @Data
+     * @Data(values={"fixed", "layout-boxed", "layout-top-nav", "sidebar-collapse", "sidebar-mini"})
      */
     protected $layoutType = 'sidebar-mini';
 

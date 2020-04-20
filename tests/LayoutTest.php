@@ -15,6 +15,7 @@ testCase('LayoutTest.php', function () {
     testCase('a layout is created', function () {
         setUp(function () {
             $this->layout = new Layout;
+            $this->layoutModel = $this->layout->getModel();
         });
 
         createMacro('the view of the layout', function (Closure $tests) {
@@ -38,8 +39,29 @@ testCase('LayoutTest.php', function () {
             $this->assertEquals('blue', $this->layout->getSkin());
         });
 
+        test('testing the domain values for the skin data', function () {
+            $expected = [
+                'blue', 'black', 'purple',
+                'yellow', 'red', 'green'
+            ];
+
+            $this->assertEquals($expected, $this->layoutModel['data']['skin']['values']);
+        });
+
         test('the layoutType is "sidebar-mini" by default', function () {
             $this->assertEquals('sidebar-mini', $this->layout->getLayoutType());
+        });
+
+        test('testing the domain values for the layoutType data', function () {
+            $expected = [
+                'fixed',
+                'layout-boxed',
+                'layout-top-nav',
+                'sidebar-collapse',
+                'sidebar-mini',
+            ];
+
+            $this->assertEquals($expected, $this->layoutModel['data']['layoutType']['values']);
         });
 
         useMacro('the view of the layout', function () {
