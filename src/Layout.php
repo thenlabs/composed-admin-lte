@@ -28,6 +28,16 @@ class Layout extends AbstractView
      */
     protected $layoutType = 'sidebar-mini';
 
+    /**
+     * @Data
+     */
+    protected $contentTitle;
+
+    /**
+     * @Data
+     */
+    protected $contentDescription;
+
     public function getOwnDependencies(): array
     {
         return [
@@ -299,8 +309,8 @@ class Layout extends AbstractView
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+        {$this->contentTitle}
+        <small>{$this->contentDescription}</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>

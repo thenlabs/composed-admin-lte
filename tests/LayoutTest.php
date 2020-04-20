@@ -51,7 +51,7 @@ testCase('LayoutTest.php', function () {
             });
         });
 
-        $expectedData = ['title', 'skin', 'layoutType'];
+        $expectedData = ['title', 'skin', 'layoutType', 'contentTitle', 'contentDescription'];
         foreach ($expectedData as $dataName) {
             test("has the '{$dataName}' data", function () use ($dataName) {
                 $this->assertViewHasData($dataName, $this->layout);
@@ -154,6 +154,38 @@ testCase('LayoutTest.php', function () {
                         $this->assertFalse($this->body->hasClass('sidebar-mini'));
                         $this->assertTrue($this->body->hasClass($this->value));
                     });
+                });
+            });
+        });
+
+        testCase('sets a new contentTitle value to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setContentTitle($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('the view has the expected content title', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('section.content-header > h1')->html()
+                    );
+                });
+            });
+        });
+
+        testCase('sets a new contentDescription value to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setContentDescription($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('the view has the expected content description', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('section.content-header small')->html()
+                    );
                 });
             });
         });
