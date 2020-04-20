@@ -18,6 +18,16 @@ class Layout extends AbstractView
      */
     protected $title;
 
+    /**
+     * @Data
+     */
+    protected $skin = 'blue';
+
+    /**
+     * @Data
+     */
+    protected $layoutType = 'sidebar-mini';
+
     public function getOwnDependencies(): array
     {
         return [
