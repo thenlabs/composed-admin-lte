@@ -11,6 +11,19 @@ use Closure;
 setTestCaseNamespace(__NAMESPACE__);
 setTestCaseClass(TestCase::class);
 
+define('SKIN_VALUES', [
+    'blue', 'black', 'purple',
+    'yellow', 'red', 'green'
+]);
+
+define('LAYOUT_TYPE_VALUES', [
+    'fixed',
+    'layout-boxed',
+    'layout-top-nav',
+    'sidebar-collapse',
+    'sidebar-mini',
+]);
+
 testCase('LayoutTest.php', function () {
     testCase('a layout is created', function () {
         setUp(function () {
@@ -40,12 +53,7 @@ testCase('LayoutTest.php', function () {
         });
 
         test('testing the domain values for the skin data', function () {
-            $expected = [
-                'blue', 'black', 'purple',
-                'yellow', 'red', 'green'
-            ];
-
-            $this->assertEquals($expected, $this->layoutModel['data']['skin']['values']);
+            $this->assertEquals(SKIN_VALUES, $this->layoutModel['data']['skin']['values']);
         });
 
         test('the layoutType is "sidebar-mini" by default', function () {
@@ -53,15 +61,7 @@ testCase('LayoutTest.php', function () {
         });
 
         test('testing the domain values for the layoutType data', function () {
-            $expected = [
-                'fixed',
-                'layout-boxed',
-                'layout-top-nav',
-                'sidebar-collapse',
-                'sidebar-mini',
-            ];
-
-            $this->assertEquals($expected, $this->layoutModel['data']['layoutType']['values']);
+            $this->assertEquals(LAYOUT_TYPE_VALUES, $this->layoutModel['data']['layoutType']['values']);
         });
 
         useMacro('the view of the layout', function () {
@@ -107,6 +107,20 @@ testCase('LayoutTest.php', function () {
         });
 
         testCase('sets a title to the layout', function () {
+            setUp(function () {
+                $this->title = uniqid();
+                $this->layout->setTitle($this->title);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('has the expected title', function () {
+                    $page = new HtmlPage($this->layoutView->saveHTML());
+                    $this->assertEquals($this->title, $page->getTitle());
+                });
+            });
+        });
+
+        testCase('sets a skin to the layout', function () {
             setUp(function () {
                 $this->title = uniqid();
                 $this->layout->setTitle($this->title);
