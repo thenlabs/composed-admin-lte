@@ -128,10 +128,7 @@ testCase('LayoutTest.php', function () {
 
         testCase('sets a new skin value to the layout', function () {
             setUp(function () {
-                $values = SKIN_VALUES;
-                unset($values[0]); // remove blue
-                $key = array_rand($values);
-                $this->value = $values[$key];
+                $this->value = 'green';
                 $this->layout->setSkin($this->value);
             });
 
@@ -147,10 +144,7 @@ testCase('LayoutTest.php', function () {
 
         testCase('sets a new layoutType value to the layout', function () {
             setUp(function () {
-                $values = LAYOUT_TYPE_VALUES;
-                unset($values[0]); // remove "sidebar-mini"
-                $key = array_rand($values);
-                $this->value = $values[$key];
+                $this->value = 'fixed';
                 $this->layout->setLayoutType($this->value);
             });
 
