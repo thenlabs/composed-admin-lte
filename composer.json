@@ -2,6 +2,7 @@
     "name": "thenfriends/composed-admin-lte",
     "type": "then-package",
     "require": {
+        "almasaeed2010/adminlte": "~2.4",
         "thenlabs/composed-views": "dev-master"
     },
     "require-dev": {
@@ -15,5 +16,15 @@
             "email": "andaniel05@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "ThenFriends\\ComposedAdminLte\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ThenFriends\\ComposedAdminLte\\Tests\\": "tests/"
+        }
+    }
 }

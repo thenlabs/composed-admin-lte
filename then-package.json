@@ -1,5 +1,11 @@
 {
     "assets": {
-        "assets/*": ""
+        "vendor/almasaeed2010/adminlte/dist/*": ""
+    },
+    "mergeJson": {
+        "vendor/almasaeed2010/adminlte/bower.json": {
+            "target": "bower.json",
+            "keys": ["dependencies", "devDependencies"]
+        }
     }
 }
