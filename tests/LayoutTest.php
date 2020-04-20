@@ -148,7 +148,7 @@ testCase('LayoutTest.php', function () {
         testCase('sets a new layoutType value to the layout', function () {
             setUp(function () {
                 $values = LAYOUT_TYPE_VALUES;
-                unset($values[0]); // remove fixed
+                unset($values[0]); // remove "sidebar-mini"
                 $key = array_rand($values);
                 $this->value = $values[$key];
                 $this->layout->setLayoutType($this->value);
@@ -157,7 +157,7 @@ testCase('LayoutTest.php', function () {
             useMacro('the view of the layout', function () {
                 useMacro('the body element', function () {
                     test('has the expected layout type css class', function () {
-                        $this->assertFalse($this->body->hasClass('fixed'));
+                        $this->assertFalse($this->body->hasClass('sidebar-mini'));
                         $this->assertTrue($this->body->hasClass($this->value));
                     });
                 });
