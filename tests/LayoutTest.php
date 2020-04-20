@@ -41,6 +41,16 @@ testCase('LayoutTest.php', function () {
             });
         });
 
+        createMacro('the body element', function (Closure $tests) {
+            testCase('the body element', function () use ($tests) {
+                setUp(function () {
+                    $this->body = $this->layoutView->filter('body');
+                });
+
+                $tests();
+            });
+        });
+
         $expectedData = ['title', 'skin', 'layoutType'];
         foreach ($expectedData as $dataName) {
             test("has the '{$dataName}' data", function () use ($dataName) {
@@ -91,11 +101,7 @@ testCase('LayoutTest.php', function () {
                 }
             });
 
-            testCase('the body element', function () {
-                setUp(function () {
-                    $this->body = $this->layoutView->filter('body');
-                });
-
+            useMacro('the body element', function () {
                 test('has the "skin-blue" css class', function () {
                     $this->assertTrue($this->body->hasClass('skin-blue'));
                 });
@@ -122,14 +128,19 @@ testCase('LayoutTest.php', function () {
 
         testCase('sets a skin to the layout', function () {
             setUp(function () {
-                $this->title = uniqid();
-                $this->layout->setTitle($this->title);
+                $values = SKIN_VALUES;
+                unset($values[0]); // remove blue
+                $key = array_rand($values);
+                $this->value = $values[$key];
+                $this->layout->setSkin($this->value);
             });
 
             useMacro('the view of the layout', function () {
-                test('has the expected title', function () {
-                    $page = new HtmlPage($this->layoutView->saveHTML());
-                    $this->assertEquals($this->title, $page->getTitle());
+                useMacro('the body element', function () {
+                    test('has the expected skin class', function () {
+                        $this->assertFalse($this->body->hasClass('skin-blue'));
+                        $this->assertTrue($this->body->hasClass('skin-'.$this->value));
+                    });
                 });
             });
         });

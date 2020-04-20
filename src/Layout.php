@@ -89,7 +89,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-{$this->skin} sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
