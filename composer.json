@@ -1,0 +1,19 @@
+{
+    "name": "thenfriends/composed-admin-lte",
+    "type": "then-package",
+    "require": {
+        "thenlabs/composed-views": "dev-master"
+    },
+    "require-dev": {
+        "thenlabs/cli": "dev-master",
+        "thenlabs/pyramidaltests": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Daniel Navarro Taño",
+            "email": "andaniel05@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
