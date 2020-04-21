@@ -216,5 +216,21 @@ testCase('LayoutTest.php', function () {
                 });
             });
         });
+
+        testCase('sets a new logo to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setLogo($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('the view has the expected logo', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('a.logo')->getInnerHtml()
+                    );
+                });
+            });
+        });
     });
 });
