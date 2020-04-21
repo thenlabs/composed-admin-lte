@@ -7,7 +7,7 @@
     },
     "require-dev": {
         "thenlabs/cli": "dev-master",
-        "thenlabs/pyramidaltests": "dev-master"
+        "thenlabs/pyramidal-tests": "dev-master"
     },
     "license": "MIT",
     "authors": [

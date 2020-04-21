@@ -11,6 +11,11 @@ use Closure;
 setTestCaseNamespace(__NAMESPACE__);
 setTestCaseClass(TestCase::class);
 
+define('DATA_NAMES', [
+    'title', 'skin', 'layoutType', 'contentTitle',
+    'contentDescription', 'logo', 'logoLink'
+]);
+
 define('SKIN_VALUES', [
     'blue', 'black', 'purple',
     'yellow', 'red', 'green'
@@ -51,8 +56,7 @@ testCase('LayoutTest.php', function () {
             });
         });
 
-        $expectedData = ['title', 'skin', 'layoutType', 'contentTitle', 'contentDescription'];
-        foreach ($expectedData as $dataName) {
+        foreach (DATA_NAMES as $dataName) {
             test("has the '{$dataName}' data", function () use ($dataName) {
                 $this->assertViewHasData($dataName, $this->layout);
             });
@@ -101,6 +105,13 @@ testCase('LayoutTest.php', function () {
                 }
             });
 
+            test('the link of the logo is equal to "javascript:;"', function () {
+                $this->assertEquals(
+                    'javascript:;',
+                    $this->layoutView->filter('a.logo')->getAttribute('href')
+                );
+            });
+
             useMacro('the body element', function () {
                 test('has the "skin-blue" css class', function () {
                     $this->assertTrue($this->body->hasClass('skin-blue'));
@@ -112,7 +123,7 @@ testCase('LayoutTest.php', function () {
             });
         });
 
-        testCase('sets a title to the layout', function () {
+        testCase('sets a new title to the layout', function () {
             setUp(function () {
                 $this->title = uniqid();
                 $this->layout->setTitle($this->title);
@@ -185,6 +196,22 @@ testCase('LayoutTest.php', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('section.content-header small')->html()
+                    );
+                });
+            });
+        });
+
+        testCase('sets a new logo link to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setLogoLink($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('the view has the expected logo link', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('a.logo')->getAttribute('href')
                     );
                 });
             });

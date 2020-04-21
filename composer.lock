@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa6031e9a2ff7075f871dc7755d8dbd1",
+    "content-hash": "0d91068d434999c3a9a35712bf421ba0",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -227,12 +227,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "811c569dd23a19b02116ac0613e2f67a76c15931"
+                "reference": "854423eadba4e1421dcdadb0deeb3134a9b91d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/811c569dd23a19b02116ac0613e2f67a76c15931",
-                "reference": "811c569dd23a19b02116ac0613e2f67a76c15931",
+                "url": "https://api.github.com/repos/composer/semver/zipball/854423eadba4e1421dcdadb0deeb3134a9b91d88",
+                "reference": "854423eadba4e1421dcdadb0deeb3134a9b91d88",
                 "shasum": ""
             },
             "require": {
@@ -280,7 +280,7 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2020-03-17T11:42:48+00:00"
+            "time": "2020-04-21T08:26:55+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1377,12 +1377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/cli.git",
-                "reference": "a5fbf604e848e57146f909790c66556297a7a009"
+                "reference": "30afa601693fb6fabf83e48db585399704b76018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/cli/zipball/a5fbf604e848e57146f909790c66556297a7a009",
-                "reference": "a5fbf604e848e57146f909790c66556297a7a009",
+                "url": "https://api.github.com/repos/thenlabs/cli/zipball/30afa601693fb6fabf83e48db585399704b76018",
+                "reference": "30afa601693fb6fabf83e48db585399704b76018",
                 "shasum": ""
             },
             "require": {
@@ -1391,9 +1391,9 @@
                 "symfony/finder": "^5.0"
             },
             "require-dev": {
-                "andaniel05/pyramidaltests": "dev-master",
                 "friendsofphp/php-cs-fixer": "^2.12",
-                "mikey179/vfsstream": "~1"
+                "mikey179/vfsstream": "~1",
+                "thenlabs/pyramidal-tests": "dev-master"
             },
             "bin": [
                 "then"
@@ -1417,7 +1417,7 @@
                     "name": "ThenLabs Community"
                 }
             ],
-            "time": "2020-04-17T12:27:49+00:00"
+            "time": "2020-04-21T17:40:50+00:00"
         },
         {
             "name": "thenlabs/components",
@@ -1425,12 +1425,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/components.git",
-                "reference": "0e0313e345ab3573a4ec5f7b3b7098f5a56a8063"
+                "reference": "95bf49bcc64aade4a1291894f02801a6724c5587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/components/zipball/0e0313e345ab3573a4ec5f7b3b7098f5a56a8063",
-                "reference": "0e0313e345ab3573a4ec5f7b3b7098f5a56a8063",
+                "url": "https://api.github.com/repos/thenlabs/components/zipball/95bf49bcc64aade4a1291894f02801a6724c5587",
+                "reference": "95bf49bcc64aade4a1291894f02801a6724c5587",
                 "shasum": ""
             },
             "require": {
@@ -1439,9 +1439,9 @@
                 "symfony/event-dispatcher": "^4.2"
             },
             "require-dev": {
-                "andaniel05/pyramidaltests": "dev-master",
                 "friendsofphp/php-cs-fixer": "^2.12",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.0",
+                "thenlabs/pyramidal-tests": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -1462,7 +1462,7 @@
                     "name": "ThenLabs Community"
                 }
             ],
-            "time": "2020-04-17T12:22:54+00:00"
+            "time": "2020-04-21T17:35:25+00:00"
         },
         {
             "name": "thenlabs/composed-views",
@@ -1470,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/composed-views.git",
-                "reference": "4b0dcb6cb552f255f5e8c0aca236373c1a358bdf"
+                "reference": "94ecce67888397414535beefc656179041063d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/composed-views/zipball/4b0dcb6cb552f255f5e8c0aca236373c1a358bdf",
-                "reference": "4b0dcb6cb552f255f5e8c0aca236373c1a358bdf",
+                "url": "https://api.github.com/repos/thenlabs/composed-views/zipball/94ecce67888397414535beefc656179041063d98",
+                "reference": "94ecce67888397414535beefc656179041063d98",
                 "shasum": ""
             },
             "require": {
@@ -1486,9 +1486,9 @@
                 "wa72/htmlpagedom": "^2.0"
             },
             "require-dev": {
-                "andaniel05/pyramidaltests": "dev-master",
                 "friendsofphp/php-cs-fixer": "^2.12",
-                "thenlabs/class-builder": "dev-master"
+                "thenlabs/class-builder": "dev-master",
+                "thenlabs/pyramidal-tests": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -1509,7 +1509,7 @@
                     "name": "ThenLabs Community"
                 }
             ],
-            "time": "2020-04-17T14:54:35+00:00"
+            "time": "2020-04-21T17:44:48+00:00"
         },
         {
             "name": "wa72/htmlpagedom",
@@ -2898,17 +2898,17 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
-            "name": "thenlabs/pyramidaltests",
+            "name": "thenlabs/pyramidal-tests",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/pyramidal-tests.git",
-                "reference": "c7f9d683528dc51960c8a5aced2eb51b4a07a7dd"
+                "reference": "44657305b99b60f27517bbf3b66b0720831b3954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/pyramidal-tests/zipball/c7f9d683528dc51960c8a5aced2eb51b4a07a7dd",
-                "reference": "c7f9d683528dc51960c8a5aced2eb51b4a07a7dd",
+                "url": "https://api.github.com/repos/thenlabs/pyramidal-tests/zipball/44657305b99b60f27517bbf3b66b0720831b3954",
+                "reference": "44657305b99b60f27517bbf3b66b0720831b3954",
                 "shasum": ""
             },
             "require": {
@@ -2933,7 +2933,7 @@
                     "email": "andaniel05@gmail.com"
                 }
             ],
-            "time": "2020-04-16T13:51:05+00:00"
+            "time": "2020-04-21T14:55:58+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -3029,7 +3029,7 @@
     "stability-flags": {
         "thenlabs/composed-views": 20,
         "thenlabs/cli": 20,
-        "thenlabs/pyramidaltests": 20
+        "thenlabs/pyramidal-tests": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
