@@ -354,12 +354,15 @@ class Layout extends AbstractView
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <div class="left-footer-text">
+        {$this->leftFooterText}
+    </div>
+
+    <!-- To the right -->
+    <div class="right-footer-text pull-right hidden-xs">
+        {$this->rightFooterText}
+    </div>
   </footer>
 
   <!-- Control Sidebar -->

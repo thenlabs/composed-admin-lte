@@ -176,7 +176,7 @@ testCase('LayoutTest.php', function () {
             });
 
             useMacro('the view of the layout', function () {
-                test('the view has the expected content title', function () {
+                test('has the expected content title', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('section.content-header > h1')->html()
@@ -192,7 +192,7 @@ testCase('LayoutTest.php', function () {
             });
 
             useMacro('the view of the layout', function () {
-                test('the view has the expected content description', function () {
+                test('has the expected content description', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('section.content-header small')->html()
@@ -208,7 +208,7 @@ testCase('LayoutTest.php', function () {
             });
 
             useMacro('the view of the layout', function () {
-                test('the view has the expected logo link', function () {
+                test('has the expected logo link', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('a.logo')->getAttribute('href')
@@ -224,10 +224,42 @@ testCase('LayoutTest.php', function () {
             });
 
             useMacro('the view of the layout', function () {
-                test('the view has the expected logo', function () {
+                test('has the expected logo', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('a.logo')->getInnerHtml()
+                    );
+                });
+            });
+        });
+
+        testCase('sets a new left footer text to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setLeftFooterText($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('has the expected left footer text', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('.left-footer-text')->getInnerHtml()
+                    );
+                });
+            });
+        });
+
+        testCase('sets a new right footer text to the layout', function () {
+            setUp(function () {
+                $this->value = uniqid();
+                $this->layout->setRightFooterText($this->value);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('has the expected right footer text', function () {
+                    $this->assertContains(
+                        $this->value,
+                        $this->layoutView->filter('.right-footer-text')->getInnerHtml()
                     );
                 });
             });
