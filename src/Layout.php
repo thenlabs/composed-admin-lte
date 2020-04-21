@@ -53,6 +53,16 @@ class Layout extends AbstractView
         <span class="logo-lg"><b>Admin</b>LTE</span>
     ';
 
+    /**
+     * @Data
+     */
+    protected $leftFooterText;
+
+    /**
+     * @Data
+     */
+    protected $rightFooterText;
+
     public function getOwnDependencies(): array
     {
         return [

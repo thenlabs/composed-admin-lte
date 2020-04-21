@@ -12,8 +12,8 @@ setTestCaseNamespace(__NAMESPACE__);
 setTestCaseClass(TestCase::class);
 
 define('DATA_NAMES', [
-    'title', 'skin', 'layoutType', 'contentTitle',
-    'contentDescription', 'logo', 'logoLink'
+    'title', 'skin', 'layoutType', 'contentTitle', 'contentDescription',
+    'logo', 'logoLink', 'leftFooterText', 'rightFooterText'
 ]);
 
 define('SKIN_VALUES', [
