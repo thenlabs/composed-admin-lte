@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace ThenFriends\ComposedAdminLte\Tests;
 
 use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\Sidebar;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
@@ -23,5 +24,6 @@ class TestCase extends PHPUnitTestCase
         $model = $view->getModel();
 
         $this->assertArrayHasKey($sidebarName, $model['sidebars'], "The view has not the sidebar '{$sidebarName}'.");
+        $this->assertInstanceOf(Sidebar::class, $view->{$sidebarName});
     }
 }

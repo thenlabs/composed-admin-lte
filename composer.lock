@@ -1470,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/composed-views.git",
-                "reference": "94ecce67888397414535beefc656179041063d98"
+                "reference": "833194318bb58c98927f23cb57e1d6198c5f10bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/composed-views/zipball/94ecce67888397414535beefc656179041063d98",
-                "reference": "94ecce67888397414535beefc656179041063d98",
+                "url": "https://api.github.com/repos/thenlabs/composed-views/zipball/833194318bb58c98927f23cb57e1d6198c5f10bd",
+                "reference": "833194318bb58c98927f23cb57e1d6198c5f10bd",
                 "shasum": ""
             },
             "require": {
@@ -1509,7 +1509,7 @@
                     "name": "ThenLabs Community"
                 }
             ],
-            "time": "2020-04-21T17:44:48+00:00"
+            "time": "2020-04-22T16:44:59+00:00"
         },
         {
             "name": "wa72/htmlpagedom",

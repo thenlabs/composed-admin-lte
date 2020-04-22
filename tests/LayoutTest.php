@@ -2,6 +2,7 @@
 
 namespace ThenFriends\ComposedAdminLte\Tests;
 
+use ThenLabs\ComposedViews\AbstractView;
 use ThenFriends\ComposedAdminLte\Layout;
 use ThenFriends\ComposedAdminLte\Tests\TestCase;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
@@ -123,7 +124,7 @@ testCase('LayoutTest.php', function () {
             });
 
             test('the main sidebar is empty', function () {
-                $this->assertEmpty($this->layoutView->filter('.sidebar-main')->getInnerHtml());
+                $this->assertEmpty(trim($this->layoutView->filter('.sidebar-main')->getInnerHtml()));
             });
 
             useMacro('the body element', function () {
@@ -274,6 +275,28 @@ testCase('LayoutTest.php', function () {
                     $this->assertContains(
                         $this->value,
                         $this->layoutView->filter('.right-footer-text')->getInnerHtml()
+                    );
+                });
+            });
+        });
+
+        testCase('adds a view to the main sidebar of the layout', function () {
+            setUp(function () {
+                $view = new class extends AbstractView {
+                    public function getView(array $data = []): string
+                    {
+                        return 'the content of the view';
+                    }
+                };
+
+                $this->layout->mainSidebar->addChild($view);
+            });
+
+            useMacro('the view of the layout', function () {
+                test('the main sidebar contains the content of the his childs', function () {
+                    $this->assertContains(
+                        'the content of the view',
+                        $this->layoutView->filter('.sidebar-main')->getInnerHtml()
                     );
                 });
             });
