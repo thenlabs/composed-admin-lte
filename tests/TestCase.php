@@ -17,4 +17,11 @@ class TestCase extends PHPUnitTestCase
 
         $this->assertArrayHasKey($dataName, $model['data'], "The view has not the data '{$dataName}'.");
     }
+
+    public function assertViewHasSidebar(string $sidebarName, AbstractView $view): void
+    {
+        $model = $view->getModel();
+
+        $this->assertArrayHasKey($sidebarName, $model['sidebars'], "The view has not the sidebar '{$sidebarName}'.");
+    }
 }

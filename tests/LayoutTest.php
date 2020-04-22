@@ -16,6 +16,10 @@ define('DATA_NAMES', [
     'logo', 'logoLink', 'leftFooterText', 'rightFooterText'
 ]);
 
+define('SIDEBAR_NAMES', [
+    'mainSidebar',
+]);
+
 define('SKIN_VALUES', [
     'blue', 'black', 'purple',
     'yellow', 'red', 'green'
@@ -59,6 +63,12 @@ testCase('LayoutTest.php', function () {
         foreach (DATA_NAMES as $dataName) {
             test("has the '{$dataName}' data", function () use ($dataName) {
                 $this->assertViewHasData($dataName, $this->layout);
+            });
+        }
+
+        foreach (SIDEBAR_NAMES as $sidebarName) {
+            test("has the '{$sidebarName}' sidebar", function () use ($sidebarName) {
+                $this->assertViewHasSidebar($sidebarName, $this->layout);
             });
         }
 
@@ -110,6 +120,10 @@ testCase('LayoutTest.php', function () {
                     'javascript:;',
                     $this->layoutView->filter('a.logo')->getAttribute('href')
                 );
+            });
+
+            test('the main sidebar is empty', function () {
+                $this->assertEmpty($this->layoutView->filter('.sidebar-main')->getInnerHtml());
             });
 
             useMacro('the body element', function () {
