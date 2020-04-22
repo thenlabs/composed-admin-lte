@@ -69,6 +69,11 @@ class Layout extends AbstractView
      */
     protected $mainSidebar;
 
+    /**
+     * @Sidebar
+     */
+    protected $content;
+
     public function getOwnDependencies(): array
     {
         return [

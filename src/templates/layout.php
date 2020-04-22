@@ -92,11 +92,9 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-
+      <div class="sidebar-content">
+        <?= $this->renderProperty('content') ?>
+      </div>
     </section>
     <!-- /.content -->
   </div>
