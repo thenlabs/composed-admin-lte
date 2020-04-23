@@ -59,12 +59,12 @@ class Layout extends AbstractView
     /**
      * @Data
      */
-    protected $leftFooterText;
+    protected $leftFooterContent;
 
     /**
      * @Data
      */
-    protected $rightFooterText;
+    protected $rightFooterContent;
 
     /**
      * @Sidebar
@@ -81,11 +81,17 @@ class Layout extends AbstractView
      */
     protected $breadcrumb;
 
+    /**
+     * @View
+     */
+    protected $menu;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->breadcrumb = new Breadcrumb;
+        $this->menu = new Menu;
     }
 
     public function getOwnDependencies(): array

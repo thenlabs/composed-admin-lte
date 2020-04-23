@@ -14,7 +14,7 @@ setTestCaseClass(TestCase::class);
 
 define('DATA_NAMES', [
     'title', 'skin', 'layoutType', 'contentTitle', 'contentDescription',
-    'logo', 'logoLink', 'leftFooterText', 'rightFooterText'
+    'logo', 'logoLink', 'leftFooterContent', 'rightFooterContent'
 ]);
 
 define('SIDEBAR_NAMES', [
@@ -252,33 +252,33 @@ testCase('LayoutTest.php', function () {
             });
         });
 
-        testCase('sets a new left footer text to the layout', function () {
+        testCase('sets a new left footer content to the layout', function () {
             setUp(function () {
                 $this->value = uniqid();
-                $this->layout->setLeftFooterText($this->value);
+                $this->layout->setLeftFooterContent($this->value);
             });
 
             useMacro('the view of the layout', function () {
-                test('has the expected left footer text', function () {
+                test('has the expected left footer content', function () {
                     $this->assertContains(
                         $this->value,
-                        $this->layoutView->filter('.left-footer-text')->getInnerHtml()
+                        $this->layoutView->filter('.left-footer-content')->getInnerHtml()
                     );
                 });
             });
         });
 
-        testCase('sets a new right footer text to the layout', function () {
+        testCase('sets a new right footer content to the layout', function () {
             setUp(function () {
                 $this->value = uniqid();
-                $this->layout->setRightFooterText($this->value);
+                $this->layout->setRightFooterContent($this->value);
             });
 
             useMacro('the view of the layout', function () {
-                test('has the expected right footer text', function () {
+                test('has the expected right footer content', function () {
                     $this->assertContains(
                         $this->value,
-                        $this->layoutView->filter('.right-footer-text')->getInnerHtml()
+                        $this->layoutView->filter('.right-footer-content')->getInnerHtml()
                     );
                 });
             });

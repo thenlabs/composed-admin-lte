@@ -54,9 +54,9 @@
       </div>
 
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <?= $this->renderProperty('menu') ?>
+      <!-- <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
@@ -70,7 +70,7 @@
             <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
@@ -102,13 +102,13 @@
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
-    <div class="right-footer-text pull-right hidden-xs">
-        <?= $this->rightFooterText ?>
+    <div class="right-footer-content pull-right hidden-xs">
+        <?= $this->rightFooterContent ?>
     </div>
 
     <!-- Default to the left -->
-    <div class="left-footer-text">
-        <?= $this->leftFooterText ?>
+    <div class="left-footer-content">
+        <?= $this->leftFooterContent ?>
     </div>
   </footer>
 </div>
