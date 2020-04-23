@@ -88,8 +88,10 @@ testCase('MenuTest.php', function () {
             $this->link3 = uniqid();
 
             $this->submenu = $this->menu->addSubMenu($this->text1, $this->icon1);
-            $this->submenu->addItem($this->text2, $this->link2);
-            $this->submenu->addItem($this->text3, $this->link3);
+            $this->submenu
+                ->addItem($this->text2, $this->link2)
+                ->addItem($this->text3, $this->link3)
+            ;
         });
 
         test(function () {

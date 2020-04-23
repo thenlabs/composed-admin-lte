@@ -27,7 +27,7 @@ class Submenu extends AbstractCompositeView
         $this->open = $open;
     }
 
-    public function addItem(string $text, string $link, bool $active = false): void
+    public function addItem(string $text, string $link, bool $active = false): self
     {
         $li_class = $active ? 'class="active"' : '';
 
@@ -36,6 +36,8 @@ class Submenu extends AbstractCompositeView
         ');
 
         $this->addChild($item);
+
+        return $this;
     }
 
     public function end(): Menu
