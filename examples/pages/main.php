@@ -16,8 +16,8 @@ $page->breadcrumb->addItem('Current', '#', 'star', true);
 $page->menu->addHeader('MAIN MENU');
 $page->menu->addItem('Dashboard', '#', 'dashboard', true);
 $page->menu->addItem('User', '#', 'user');
-$page->menu->addSubmenu('More', 'link')
-    ->addItem('Item 1', '#')
+$page->menu->addSubmenu('More', 'link', true, true)
+    ->addItem('Item 1', '#', true)
     ->addItem('Item 1', '#')
     ->end()
 ;
