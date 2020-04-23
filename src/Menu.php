@@ -32,9 +32,9 @@ class Menu extends HtmlElement
         $this->addChild($item);
     }
 
-    public function addSubmenu(string $text, string $link, string $icon, bool $active = false, bool $open = false): Submenu
+    public function addSubmenu(string $text, string $icon, bool $active = false, bool $open = false): Submenu
     {
-        $submenu = new Submenu($text, $link, $icon, $active, $open);
+        $submenu = new Submenu($text, $icon, $active, $open);
 
         $this->addChild($submenu);
 

@@ -13,17 +13,15 @@ use ThenLabs\ComposedViews\TextView;
 class Submenu extends AbstractCompositeView
 {
     protected $text;
-    protected $link;
     protected $icon;
     protected $active;
     protected $open;
 
-    public function __construct(string $text, string $link, ?string $icon, bool $active = false, bool $open = false)
+    public function __construct(string $text, ?string $icon, bool $active = false, bool $open = false)
     {
         parent::__construct();
 
         $this->text = $text;
-        $this->link = $link;
         $this->icon = $icon;
         $this->active = $active;
         $this->open = $open;

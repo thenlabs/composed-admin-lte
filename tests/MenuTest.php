@@ -79,7 +79,6 @@ testCase('MenuTest.php', function () {
     testCase(function () {
         setUp(function () {
             $this->text1 = uniqid();
-            $this->link1 = uniqid();
             $this->icon1 = uniqid();
 
             $this->text2 = uniqid();
@@ -88,7 +87,7 @@ testCase('MenuTest.php', function () {
             $this->text3 = uniqid();
             $this->link3 = uniqid();
 
-            $this->submenu = $this->menu->addSubMenu($this->text1, $this->link1, $this->icon1);
+            $this->submenu = $this->menu->addSubMenu($this->text1, $this->icon1);
             $this->submenu->addItem($this->text2, $this->link2);
             $this->submenu->addItem($this->text3, $this->link3);
         });
