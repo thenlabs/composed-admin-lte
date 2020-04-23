@@ -20,4 +20,15 @@ class Menu extends HtmlElement
     {
         $this->addChild(new HtmlElement('li', ['class' => 'header'], $text));
     }
+
+    public function addItem(string $text, string $link, string $icon, bool $active = false): void
+    {
+        $li_class = $active ? 'class="active"' : '';
+
+        $item = new TextView('
+            <li '.$li_class.'><a href="'.$link.'"><i class="fa fa-'.$icon.'"></i> <span>'.$text.'</span></a></li>
+        ');
+
+        $this->addChild($item);
+    }
 }

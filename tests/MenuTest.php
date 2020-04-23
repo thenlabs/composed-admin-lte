@@ -35,4 +35,44 @@ testCase('MenuTest.php', function () {
             $this->assertXmlStringEqualsXmlString($expected, $this->menu->render());
         });
     });
+
+    testCase(function () {
+        setUp(function () {
+            $this->text1 = uniqid();
+            $this->link1 = uniqid();
+            $this->icon1 = uniqid();
+
+            $this->menu->addItem($this->text1, $this->link1, $this->icon1);
+        });
+
+        test(function () {
+            $expected = '
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li><a href="'.$this->link1.'"><i class="fa fa-'.$this->icon1.'"></i> <span>'.$this->text1.'</span></a></li>
+                </ul>
+            ';
+
+            $this->assertXmlStringEqualsXmlString($expected, $this->menu->render());
+        });
+    });
+
+    testCase(function () {
+        setUp(function () {
+            $this->text1 = uniqid();
+            $this->link1 = uniqid();
+            $this->icon1 = uniqid();
+
+            $this->menu->addItem($this->text1, $this->link1, $this->icon1, true);
+        });
+
+        test(function () {
+            $expected = '
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="active"><a href="'.$this->link1.'"><i class="fa fa-'.$this->icon1.'"></i> <span>'.$this->text1.'</span></a></li>
+                </ul>
+            ';
+
+            $this->assertXmlStringEqualsXmlString($expected, $this->menu->render());
+        });
+    });
 });

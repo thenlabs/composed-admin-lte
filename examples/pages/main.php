@@ -11,6 +11,6 @@ $page->setLeftFooterText('My Left Footer Text');
 $page->setRightFooterText('My Right Footer Text');
 
 $page->breadcrumb->addItem('Home', '/', 'dashboard');
-$page->breadcrumb->addItem('Current', '/', 'star', true);
+$page->breadcrumb->addItem('Current', 'javascript:;', 'star', true);
 
 echo $page;
