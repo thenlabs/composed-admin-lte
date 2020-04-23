@@ -10,6 +10,6 @@
         "vendor/almasaeed2010/adminlte/package.json": {
             "target": "package.json",
             "keys": ["dependencies", "devDependencies"]
-        },
+        }
     }
 }
