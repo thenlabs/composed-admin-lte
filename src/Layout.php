@@ -4,10 +4,12 @@ declare(strict_types=1);
 namespace ThenFriends\ComposedAdminLte;
 
 use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\HtmlElement;
 use ThenLabs\ComposedViews\Asset\Stylesheet;
 use ThenLabs\ComposedViews\Asset\Script;
 use ThenLabs\ComposedViews\Annotation\Data;
 use ThenLabs\ComposedViews\Annotation\Sidebar;
+use ThenLabs\ComposedViews\Annotation\View;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
@@ -73,6 +75,18 @@ class Layout extends AbstractView
      * @Sidebar
      */
     protected $content;
+
+    /**
+     * @View
+     */
+    protected $breadcrumb;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->breadcrumb = new Breadcrumb;
+    }
 
     public function getOwnDependencies(): array
     {
