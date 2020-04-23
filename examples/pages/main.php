@@ -18,7 +18,7 @@ $page->menu->addItem('Dashboard', '#', 'dashboard', true);
 $page->menu->addItem('User', '#', 'user');
 $page->menu->addSubmenu('More', 'link', true, true)
     ->addItem('Item 1', '#', true)
-    ->addItem('Item 1', '#')
+    ->addItem('Item 2', '#')
     ->end()
 ;
 

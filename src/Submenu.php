@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace ThenFriends\ComposedAdminLte;
 
 use ThenLabs\ComposedViews\AbstractCompositeView;
-use ThenLabs\ComposedViews\HtmlElement;
 use ThenLabs\ComposedViews\TextView;
 
 /**

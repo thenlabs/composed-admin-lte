@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace ThenFriends\ComposedAdminLte;
 
 use ThenLabs\ComposedViews\AbstractView;
-use ThenLabs\ComposedViews\HtmlElement;
 use ThenLabs\ComposedViews\Asset\Stylesheet;
 use ThenLabs\ComposedViews\Asset\Script;
 use ThenLabs\ComposedViews\Annotation\Data;

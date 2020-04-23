@@ -4,7 +4,6 @@ namespace ThenFriends\ComposedAdminLte\Tests;
 
 use ThenLabs\ComposedViews\AbstractView;
 use ThenFriends\ComposedAdminLte\Layout;
-use ThenFriends\ComposedAdminLte\Tests\TestCase;
 use Wa72\HtmlPageDom\HtmlPageCrawler;
 use Wa72\HtmlPageDom\HtmlPage;
 use Closure;

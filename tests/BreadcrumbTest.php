@@ -3,7 +3,6 @@
 namespace ThenFriends\ComposedAdminLte\Tests;
 
 use ThenFriends\ComposedAdminLte\Breadcrumb;
-use ThenFriends\ComposedAdminLte\Tests\TestCase;
 
 setTestCaseNamespace(__NAMESPACE__);
 setTestCaseClass(TestCase::class);
