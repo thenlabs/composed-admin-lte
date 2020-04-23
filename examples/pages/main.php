@@ -24,10 +24,17 @@ $page->menu->addSubmenu('More', 'link', true, true)
     ->end()
 ;
 
-$box = new SmallBox('aqua', '150', 'my description', 'bag', '#', 'More');
+$grid = new TextView('
+    <div class="row">
+        <div class="col-lg-3 col-xs-6"></div>
+        <div class="col-lg-3 col-xs-6"></div>
+        <div class="col-lg-3 col-xs-6"></div>
+        <div class="col-lg-3 col-xs-6"></div>
+    </div>
+');
 
-$grid = TextView::createFromSyntax('.row > .col-lg-3.col-xs-6');
-$grid->filter('.col-lg-3.col-xs-6')->append($box->render());
+$box = new SmallBox('aqua', '150', 'my description', 'bag', '#', 'More');
+$grid->filter('.col-lg-3.col-xs-6')->first()->append($box->render());
 
 $page->content->addChild($grid);
 
