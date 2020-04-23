@@ -41,14 +41,14 @@ testCase('BreadcrumbTest.php', function () {
                 $this->link2 = uniqid();
                 $this->icon2 = uniqid();
 
-                $this->breadcrumb->addItem($this->text2, $this->link2, $this->icon2);
+                $this->breadcrumb->addItem($this->text2, $this->link2, $this->icon2, true);
             });
 
             test(function () {
                 $expected = '
                     <ol class="breadcrumb">
                         <li><a href="'.$this->link1.'"><i class="fa fa-'.$this->icon1.'"></i>'.$this->text1.'</a></li>
-                        <li><a href="'.$this->link2.'"><i class="fa fa-'.$this->icon2.'"></i>'.$this->text2.'</a></li>
+                        <li class="active"><a href="'.$this->link2.'"><i class="fa fa-'.$this->icon2.'"></i>'.$this->text2.'</a></li>
                     </ol>
                 ';
                 $this->assertXmlStringEqualsXmlString($expected, $this->breadcrumb->render());

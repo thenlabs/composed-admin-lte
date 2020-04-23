@@ -10,4 +10,7 @@ $page->setContentDescription('My Content Description');
 $page->setLeftFooterText('My Left Footer Text');
 $page->setRightFooterText('My Right Footer Text');
 
+$page->breadcrumb->addItem('Home', '/', 'dashboard');
+$page->breadcrumb->addItem('Current', '/', 'star', true);
+
 echo $page;

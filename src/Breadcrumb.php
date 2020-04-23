@@ -16,10 +16,12 @@ class Breadcrumb extends HtmlElement
         parent::__construct('ol', ['class' => 'breadcrumb']);
     }
 
-    public function addItem(string $text, string $link, string $icon): void
+    public function addItem(string $text, string $link, string $icon, bool $active = false): void
     {
+        $li_class = $active ? 'class="active"' : '';
+
         $item = new TextView('
-            <li><a href="'.$link.'"><i class="fa fa-'.$icon.'"></i>'.$text.'</a></li>
+            <li '.$li_class.'><a href="'.$link.'"><i class="fa fa-'.$icon.'"></i>'.$text.'</a></li>
         ');
 
         $this->addChild($item);
