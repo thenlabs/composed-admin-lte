@@ -75,4 +75,46 @@ testCase('MenuTest.php', function () {
             $this->assertXmlStringEqualsXmlString($expected, $this->menu->render());
         });
     });
+
+    testCase(function () {
+        setUp(function () {
+            $this->text1 = uniqid();
+            $this->link1 = uniqid();
+            $this->icon1 = uniqid();
+
+            $this->text2 = uniqid();
+            $this->link2 = uniqid();
+
+            $this->text3 = uniqid();
+            $this->link3 = uniqid();
+
+            $this->submenu = $this->menu->addSubMenu($this->text1, $this->link1, $this->icon1);
+            $this->submenu->addItem($this->text2, $this->link2);
+            $this->submenu->addItem($this->text3, $this->link3);
+        });
+
+        test(function () {
+            $this->assertSame($this->menu, $this->submenu->end());
+        });
+
+        test(function () {
+            $expected = '
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="treeview">
+                      <a href="#"><i class="fa fa-'.$this->icon1.'"></i> <span>'.$this->text1.'</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="'.$this->link2.'">'.$this->text2.'</a></li>
+                        <li><a href="'.$this->link3.'">'.$this->text3.'</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            ';
+
+            $this->assertXmlStringEqualsXmlString($expected, $this->menu->render());
+        });
+    });
 });
