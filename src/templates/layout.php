@@ -49,9 +49,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-      <div class="sidebar-main">
-          <?= $this->renderProperty('mainSidebar') ?>
-      </div>
+      <div class="sidebar-main"></div>
 
       <!-- Sidebar Menu -->
       <?= $this->renderProperty('menu') ?>

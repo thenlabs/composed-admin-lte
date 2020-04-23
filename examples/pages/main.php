@@ -1,6 +1,8 @@
 <?php
 
 use ThenFriends\ComposedAdminLte\Layout;
+use ThenFriends\ComposedAdminLte\SmallBox;
+use ThenLabs\ComposedViews\TextView;
 
 $page = new Layout;
 $page->setBasePath('/assets/');
@@ -21,5 +23,12 @@ $page->menu->addSubmenu('More', 'link', true, true)
     ->addItem('Item 2', '#')
     ->end()
 ;
+
+$box = new SmallBox('aqua', '150', 'my description', 'bag', '#', 'More');
+
+$grid = TextView::createFromSyntax('.row > .col-lg-3.col-xs-6');
+$grid->filter('.col-lg-3.col-xs-6')->append($box->render());
+
+$page->content->addChild($grid);
 
 echo $page;

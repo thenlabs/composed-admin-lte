@@ -81,11 +81,6 @@ class Layout extends AbstractView
     /**
      * @Sidebar
      */
-    protected $mainSidebar;
-
-    /**
-     * @Sidebar
-     */
     protected $content;
 
     /**

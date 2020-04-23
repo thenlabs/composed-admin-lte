@@ -5,7 +5,11 @@
     "mergeJson": {
         "vendor/almasaeed2010/adminlte/bower.json": {
             "target": "bower.json",
+            "keys": ["dependencies", "devDependencies", "name"]
+        },
+        "vendor/almasaeed2010/adminlte/package.json": {
+            "target": "package.json",
             "keys": ["dependencies", "devDependencies"]
-        }
+        },
     }
 }
