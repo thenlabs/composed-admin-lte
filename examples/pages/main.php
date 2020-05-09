@@ -24,18 +24,21 @@ $page->menu->addSubmenu('More', 'link', true, true)
     ->end()
 ;
 
-$grid = new TextView('
+$box1 = new SmallBox('aqua', '150', 'my description', 'bag', '#', 'More');
+$box2 = new SmallBox('green', '150', 'my description', 'bag', '#', 'More');
+$box3 = new SmallBox('yellow', '150', 'my description', 'bag', '#', 'More');
+$box4 = new SmallBox('red', '150', 'my description', 'bag', '#', 'More');
+
+$page->content->addChild(new TextView('
     <div class="row">
-        <div class="col-lg-3 col-xs-6"></div>
-        <div class="col-lg-3 col-xs-6"></div>
-        <div class="col-lg-3 col-xs-6"></div>
-        <div class="col-lg-3 col-xs-6"></div>
+        <div class="col-lg-3 col-xs-6">'.$box1.'</div>
+        <div class="col-lg-3 col-xs-6">'.$box2.'</div>
+        <div class="col-lg-3 col-xs-6">'.$box3.'</div>
+        <div class="col-lg-3 col-xs-6">'.$box4.'</div>
     </div>
-');
-
-$box = new SmallBox('aqua', '150', 'my description', 'bag', '#', 'More');
-$grid->filter('.col-lg-3.col-xs-6')->first()->append($box->render());
-
-$page->content->addChild($grid);
+    <div class="row">
+        <div class="col-sm-12"></div>
+    </div>
+'));
 
 echo $page;

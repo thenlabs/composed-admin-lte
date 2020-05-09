@@ -6,8 +6,8 @@
         "thenlabs/composed-views": "dev-master"
     },
     "require-dev": {
-        "thenlabs/cli": "dev-master",
-        "thenlabs/pyramidal-tests": "dev-master",
+        "thenlabs/cli": "^1.0",
+        "thenlabs/pyramidal-tests": "^1.0",
         "friendsofphp/php-cs-fixer": "^2.17@dev"
     },
     "license": "MIT",
@@ -17,7 +17,6 @@
             "email": "andaniel05@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "ThenFriends\\ComposedAdminLte\\": "src/"
