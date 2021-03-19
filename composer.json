@@ -1,5 +1,5 @@
 {
-    "name": "thenfriends/composed-admin-lte",
+    "name": "thenlabs/composed-admin-lte",
     "license": "MIT",
     "authors": [
         {
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ThenFriends\\ComposedAdminLte\\": "src/"
+            "ThenLabs\\ComposedAdminLte\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ThenFriends\\ComposedAdminLte\\Tests\\": "tests/"
+            "ThenLabs\\ComposedAdminLte\\Tests\\": "tests/"
         }
     }
 }
