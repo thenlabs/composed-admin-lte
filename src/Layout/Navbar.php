@@ -5,6 +5,7 @@ namespace ThenLabs\ComposedAdminLte\Layout;
 
 use ThenLabs\ComposedViews\AbstractView;
 use ThenLabs\ComposedViews\Annotation\View;
+use ThenLabs\ComposedViews\Annotation\Sidebar;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
@@ -15,6 +16,11 @@ class Navbar extends AbstractView
      * @View
      */
     public $leftMenu;
+
+    /**
+     * @Sidebar
+     */
+    public $sidebar;
 
     public function __construct()
     {
