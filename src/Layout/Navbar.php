@@ -9,12 +9,12 @@ use ThenLabs\ComposedViews\Annotation\Data;
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
-class Header extends AbstractView
+class Navbar extends AbstractView
 {
     public function getView(array $data = []): string
     {
         ob_start();
-        require __DIR__.'/../../templates/layout/header.tpl.php';
+        require __DIR__.'/../../templates/layout/navbar.tpl.php';
         return ob_get_clean();
     }
 }

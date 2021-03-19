@@ -9,7 +9,7 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <?= $this->renderProperty('header') ?>
+  <?= $this->renderProperty('navbar') ?>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">

@@ -27,7 +27,7 @@ class Layout extends AbstractView
     /**
      * @View
      */
-    public $header;
+    public $navbar;
 
     /**
      * @View
@@ -49,7 +49,7 @@ class Layout extends AbstractView
         parent::__construct();
 
         $this->logo = new Layout\Logo;
-        $this->header = new Layout\Header;
+        $this->navbar = new Layout\Navbar;
         $this->main = new Layout\Main;
         $this->controlSidebar = new Layout\ControlSidebar;
         $this->footer = new Layout\Footer;
