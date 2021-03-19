@@ -6,6 +6,7 @@ namespace ThenLabs\ComposedAdminLte;
 use ThenLabs\ComposedViews\AbstractView;
 use ThenLabs\ComposedViews\Annotation\Data;
 use ThenLabs\ComposedViews\Annotation\View;
+use ThenLabs\ComposedViews\Annotation\Sidebar;
 use ThenLabs\ComposedViews\Asset\Stylesheet;
 use ThenLabs\ComposedViews\Asset\Script;
 
@@ -44,6 +45,16 @@ class Layout extends AbstractView
      */
     public $footer;
 
+    /**
+     * @Sidebar
+     */
+    public $sidebar;
+
+    /**
+     * @View
+     */
+    public $menu;
+
     public function __construct()
     {
         parent::__construct();
@@ -53,6 +64,7 @@ class Layout extends AbstractView
         $this->main = new Layout\Main;
         $this->controlSidebar = new Layout\ControlSidebar;
         $this->footer = new Layout\Footer;
+        $this->menu = new Layout\Menu;
     }
 
     public function getView(array $data = []): string

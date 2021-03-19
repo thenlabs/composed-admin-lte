@@ -5,14 +5,21 @@ namespace ThenLabs\ComposedAdminLte\Layout\Navbar;
 
 use ThenLabs\ComposedViews\AbstractCompositeView;
 use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\Annotation\Data;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
 class RightMenu extends AbstractCompositeView
 {
+    /**
+     * @Data
+     */
     protected $showFullScreenButton = true;
 
+    /**
+     * @Data
+     */
     protected $showControlSidebarButton = true;
 
     public function addItem(AbstractView $item): void
