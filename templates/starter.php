@@ -9,8 +9,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $this->title ?></title>
 
-  <base href="<?= $this->getBasePath() ?>">
-
   <?= $this->renderStyles() ?>
 </head>
 <body class="hold-transition sidebar-mini">
