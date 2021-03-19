@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -257,15 +253,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </aside>
   <!-- /.control-sidebar -->
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      <?= $this->footerRightContent ?>
-    </div>
-    <!-- Default to the left -->
-    <?= $this->footerLeftContent ?>
-  </footer>
+  <?= $this->renderProperty('footer') ?>
 </div>
 <!-- ./wrapper -->
 

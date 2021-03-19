@@ -1,17 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace ThenLabs\ComposedAdminLte;
+namespace ThenLabs\ComposedAdminLte\Layout;
 
-use ThenLabs\ComposedViews\AbstractCompositeView;
+use ThenLabs\ComposedViews\AbstractView;
 use ThenLabs\ComposedViews\Annotation\Data;
+use ThenLabs\ComposedViews\Annotation\View;
 use ThenLabs\ComposedViews\Asset\Stylesheet;
 use ThenLabs\ComposedViews\Asset\Script;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
-class Layout extends AbstractCompositeView
+class Layout extends AbstractView
 {
     /**
      * @Data
@@ -24,19 +25,21 @@ class Layout extends AbstractCompositeView
     protected $contentTitle;
 
     /**
-     * @Data
+     * @View
      */
-    protected $footerLeftContent;
+    public $footer;
 
-    /**
-     * @Data
-     */
-    protected $footerRightContent;
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->footer = new Footer;
+    }
 
     public function getView(): string
     {
         ob_start();
-        require __DIR__.'/../templates/starter.php';
+        require __DIR__.'/../../templates/layout/layout.php';
         return ob_get_clean();
     }
 
