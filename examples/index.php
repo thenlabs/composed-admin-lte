@@ -8,6 +8,8 @@ $page = new Layout;
 $page->setBasePath('/assets/');
 $page->setTitle('My Title');
 
+$page->navbar->leftMenu->addItem('Home', 'javascript:;');
+
 $page->main->setContentTitle('My Content Title');
 
 $page->footer->setLeftContent('<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.');
