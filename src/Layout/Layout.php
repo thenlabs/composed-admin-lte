@@ -22,6 +22,11 @@ class Layout extends AbstractView
     /**
      * @View
      */
+    public $header;
+
+    /**
+     * @View
+     */
     public $main;
 
     /**
@@ -33,6 +38,7 @@ class Layout extends AbstractView
     {
         parent::__construct();
 
+        $this->header = new Header;
         $this->main = new Main;
         $this->footer = new Footer;
     }
@@ -40,7 +46,7 @@ class Layout extends AbstractView
     public function getView(): string
     {
         ob_start();
-        require __DIR__.'/../../templates/layout/layout.php';
+        require __DIR__.'/../../templates/layout/layout.tpl.php';
         return ob_get_clean();
     }
 

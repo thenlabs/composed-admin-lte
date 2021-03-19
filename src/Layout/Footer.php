@@ -24,7 +24,7 @@ class Footer extends AbstractView
     public function getView(): string
     {
         ob_start();
-        require __DIR__.'/../../templates/layout/footer.php';
+        require __DIR__.'/../../templates/layout/footer.tpl.php';
         return ob_get_clean();
     }
 }
