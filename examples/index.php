@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-use ThenLabs\ComposedAdminLte\Layout\Layout;
+use ThenLabs\ComposedAdminLte\Layout;
 
 $page = new Layout;
 $page->setBasePath('/assets/');

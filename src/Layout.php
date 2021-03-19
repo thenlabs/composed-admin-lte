@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ThenLabs\ComposedAdminLte\Layout;
+namespace ThenLabs\ComposedAdminLte;
 
 use ThenLabs\ComposedViews\AbstractView;
 use ThenLabs\ComposedViews\Annotation\Data;
@@ -38,15 +38,15 @@ class Layout extends AbstractView
     {
         parent::__construct();
 
-        $this->header = new Header;
-        $this->main = new Main;
-        $this->footer = new Footer;
+        $this->header = new Layout\Header;
+        $this->main = new Layout\Main;
+        $this->footer = new Layout\Footer;
     }
 
     public function getView(): string
     {
         ob_start();
-        require __DIR__.'/../../templates/layout/layout.tpl.php';
+        require __DIR__.'/../templates/layout.tpl.php';
         return ob_get_clean();
     }
 
