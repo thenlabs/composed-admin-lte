@@ -11,7 +11,7 @@ use ThenLabs\ComposedViews\Annotation\Data;
  */
 class ControlSidebar extends AbstractCompositeView
 {
-    public function getView(): string
+    public function getView(array $data = []): string
     {
         ob_start();
         require __DIR__.'/../../templates/layout/control-sidebar.tpl.php';

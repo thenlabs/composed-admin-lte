@@ -22,6 +22,11 @@ class Layout extends AbstractView
     /**
      * @View
      */
+    public $logo;
+
+    /**
+     * @View
+     */
     public $header;
 
     /**
@@ -43,13 +48,14 @@ class Layout extends AbstractView
     {
         parent::__construct();
 
+        $this->logo = new Layout\Logo;
         $this->header = new Layout\Header;
         $this->main = new Layout\Main;
         $this->controlSidebar = new Layout\ControlSidebar;
         $this->footer = new Layout\Footer;
     }
 
-    public function getView(): string
+    public function getView(array $data = []): string
     {
         ob_start();
         require __DIR__.'/../templates/layout.tpl.php';
