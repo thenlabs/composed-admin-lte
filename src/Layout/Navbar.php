@@ -22,11 +22,17 @@ class Navbar extends AbstractView
      */
     public $sidebar;
 
+    /**
+     * @View
+     */
+    public $rightMenu;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->leftMenu = new Navbar\LeftMenu;
+        $this->rightMenu = new Navbar\RightMenu;
     }
 
     public function getView(array $data = []): string
