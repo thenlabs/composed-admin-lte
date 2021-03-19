@@ -32,6 +32,11 @@ class Layout extends AbstractView
     /**
      * @View
      */
+    public $controlSidebar;
+
+    /**
+     * @View
+     */
     public $footer;
 
     public function __construct()
@@ -40,6 +45,7 @@ class Layout extends AbstractView
 
         $this->header = new Layout\Header;
         $this->main = new Layout\Main;
+        $this->controlSidebar = new Layout\ControlSidebar;
         $this->footer = new Layout\Footer;
     }
 
