@@ -20,9 +20,9 @@ class Layout extends AbstractView
     protected $title;
 
     /**
-     * @Data
+     * @View
      */
-    protected $contentTitle;
+    public $main;
 
     /**
      * @View
@@ -33,6 +33,7 @@ class Layout extends AbstractView
     {
         parent::__construct();
 
+        $this->main = new Main;
         $this->footer = new Footer;
     }
 
