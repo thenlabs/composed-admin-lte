@@ -3,15 +3,26 @@ declare(strict_types=1);
 
 namespace ThenLabs\ComposedAdminLte\Layout;
 
-use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\AbstractCompositeView;
 use ThenLabs\ComposedViews\Annotation\View;
 use ThenLabs\ComposedViews\Annotation\Sidebar;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
-class Menu extends AbstractView
+class Menu extends AbstractCompositeView
 {
+    public function addItem(string $text, string $url): self
+    {
+        $item = new Menu\Item;
+        $item->setText($text);
+        $item->setUrl($url);
+
+        $this->addChild($item);
+
+        return $this;
+    }
+
     public function getView(array $data = []): string
     {
         ob_start();

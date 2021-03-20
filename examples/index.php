@@ -10,6 +10,8 @@ $page->setTitle('My Title');
 
 $page->navbar->leftMenu->addItem('Home', 'javascript:;');
 
+$page->menu->addItem('Item 1', 'javascript:;');
+
 $page->main->setContentTitle('My Content Title');
 
 $page->footer->setLeftContent('<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.');
