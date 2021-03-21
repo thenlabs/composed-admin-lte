@@ -16,6 +16,18 @@ class Main extends AbstractCompositeView
      */
     protected $contentTitle;
 
+    /**
+     * @Data
+     */
+    public $breadcrumb;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->breadcrumb = new Main\Breadcrumb;
+    }
+
     public function getView(array $data = []): string
     {
         ob_start();

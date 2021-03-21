@@ -16,6 +16,11 @@ $page->menu->addSubMenu('My SubMenu 1', 'tachometer-alt', true, true)
     ->addItem('SubItem 2', 'tachometer-alt', '#', true)
 ;
 
+$page->main->breadcrumb
+    ->addItem('Item 1')
+    ->addItem('Item 2')
+;
+
 $page->main->setContentTitle('My Content Title');
 
 $page->footer->setLeftContent('My <strong>Footer Left Content</strong>');

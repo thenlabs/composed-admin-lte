@@ -8,10 +8,7 @@
             <h1 class="m-0"><?= $this->contentTitle ?></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
+            <?= $this->renderProperty('breadcrumb') ?>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -21,6 +18,7 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+        <?= $this->renderChildren() ?>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
