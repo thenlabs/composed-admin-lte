@@ -22,6 +22,11 @@ class SubMenu extends AbstractCompositeView
     /**
      * @Data
      */
+    protected $icon;
+
+    /**
+     * @Data
+     */
     protected $active;
 
     /**
@@ -29,9 +34,10 @@ class SubMenu extends AbstractCompositeView
      */
     protected $open;
 
-    public function __construct(string $text, bool $active, bool $open)
+    public function __construct(string $text, string $icon, bool $active, bool $open)
     {
         $this->text = $text;
+        $this->icon = $icon;
         $this->active = $active;
         $this->open = $open;
     }

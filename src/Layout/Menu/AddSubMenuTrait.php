@@ -8,9 +8,9 @@ namespace ThenLabs\ComposedAdminLte\Layout\Menu;
  */
 trait AddSubMenuTrait
 {
-    public function addSubMenu(string $text, bool $active = false, bool $open = false): SubMenu
+    public function addSubMenu(string $text, string $icon = '', bool $active = false, bool $open = false): SubMenu
     {
-        $subMenu = new SubMenu($text, $active, $open);
+        $subMenu = new SubMenu($text, $icon, $active, $open);
 
         $this->addChild($subMenu);
 
