@@ -3,14 +3,17 @@ declare(strict_types=1);
 
 namespace ThenLabs\ComposedAdminLte\Layout\Menu;
 
-use ThenLabs\ComposedViews\AbstractView;
+use ThenLabs\ComposedViews\AbstractCompositeView;
 use ThenLabs\ComposedViews\Annotation\Data;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
-class Item extends AbstractView
+class SubMenu extends AbstractCompositeView
 {
+    use AddItemTrait;
+    use AddSubMenuTrait;
+
     /**
      * @Data
      */
@@ -19,24 +22,29 @@ class Item extends AbstractView
     /**
      * @Data
      */
-    protected $url;
+    protected $active;
 
     /**
      * @Data
      */
-    protected $active;
+    protected $open;
 
-    public function __construct(string $text, string $url, bool $active)
+    public function __construct(string $text, bool $active, bool $open)
     {
         $this->text = $text;
-        $this->url = $url;
         $this->active = $active;
+        $this->open = $open;
     }
 
     public function getView(array $data = []): string
     {
         ob_start();
-        require __DIR__.'/../../../templates/layout/menu/item.tpl.php';
+        require __DIR__.'/../../../templates/layout/menu/submenu.tpl.php';
         return ob_get_clean();
+    }
+
+    public function end(): AbstractCompositeView
+    {
+        return $this->getParent();
     }
 }

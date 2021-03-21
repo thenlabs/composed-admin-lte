@@ -11,6 +11,10 @@ $page->setTitle('My Title');
 $page->navbar->leftMenu->addItem('Home', 'javascript:;');
 
 $page->menu->addItem('Item 1', 'javascript:;');
+$page->menu->addSubMenu('My SubMenu 1', true, true)
+    ->addItem('SubItem 1', 'javascript:;')
+    ->addItem('SubItem 2', 'javascript:;', true)
+;
 
 $page->main->setContentTitle('My Content Title');
 
