@@ -5,7 +5,7 @@
               <?php endif ?>
               <p>
                 <?= $this->text ?>
-                <i class="right fas fa-angle-<?php echo $this->open ? 'left' : 'right'; ?>"></i>
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
