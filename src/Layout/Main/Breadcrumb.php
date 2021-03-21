@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace ThenLabs\ComposedAdminLte\Layout\Main;
 
 use ThenLabs\ComposedViews\AbstractView;
-use ThenLabs\ComposedViews\Annotation\Data;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
