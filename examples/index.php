@@ -3,6 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use ThenLabs\ComposedAdminLte\Layout;
+use ThenLabs\ComposedAdminLte\Dashboard\SmallBox;
 
 $page = new Layout;
 $page->setBasePath('/assets/');
@@ -18,6 +19,13 @@ $page->menu->addSubMenu('My SubMenu 1', 'tachometer-alt', true, true)
 
 $page->main->breadcrumb->addItem('Item 1')->addItem('Item 2');
 $page->main->setContentTitle('My Content Title');
+
+$box1 = new SmallBox;
+$box1->setMainText('100');
+$box1->setSecondaryText('my secondary text');
+$box1->setIcon('bag');
+
+$page->main->addChild($box1);
 
 $page->footer->setLeftContent('My <strong>Footer Left Content</strong>');
 $page->footer->setRightContent('My Footer Right Content');
