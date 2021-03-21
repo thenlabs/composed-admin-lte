@@ -12,11 +12,12 @@ use ThenLabs\ComposedViews\Annotation\Sidebar;
  */
 class Menu extends AbstractCompositeView
 {
-    public function addItem(string $text, string $url): self
+    public function addItem(string $text, string $url, bool $active = false): self
     {
         $item = new Menu\Item;
         $item->setText($text);
         $item->setUrl($url);
+        $item->setActive($active);
 
         $this->addChild($item);
 

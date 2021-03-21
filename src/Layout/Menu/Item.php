@@ -21,6 +21,11 @@ class Item extends AbstractView
      */
     protected $url;
 
+    /**
+     * @Data
+     */
+    protected $active;
+
     public function getView(array $data = []): string
     {
         ob_start();
