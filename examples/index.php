@@ -10,15 +10,15 @@ $page->setTitle('My Title');
 
 $page->navbar->leftMenu->addItem('Home', 'javascript:;');
 
-$page->menu->addItem('Item 1', 'javascript:;');
-$page->menu->addSubMenu('My SubMenu 1', true, true)
-    ->addItem('SubItem 1', 'javascript:;')
-    ->addItem('SubItem 2', 'javascript:;', true)
-;
+$page->menu->addItem('Item 1', 'tachometer-alt');
+// $page->menu->addSubMenu('My SubMenu 1', true, true)
+//     ->addItem('SubItem 1', 'javascript:;')
+//     ->addItem('SubItem 2', 'javascript:;', true)
+// ;
 
 $page->main->setContentTitle('My Content Title');
 
-$page->footer->setLeftContent('<strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.');
-$page->footer->setRightContent('Anything you want');
+$page->footer->setLeftContent('My <strong>Footer Left Content</strong>');
+$page->footer->setRightContent('My Footer Right Content');
 
 echo $page;

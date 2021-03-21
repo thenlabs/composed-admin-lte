@@ -8,9 +8,9 @@ namespace ThenLabs\ComposedAdminLte\Layout\Menu;
  */
 trait AddItemTrait
 {
-    public function addItem(string $text, string $url, bool $active = false): self
+    public function addItem(string $text, string $icon = '', string $url = 'javascript:;', bool $active = false): self
     {
-        $item = new Item($text, $url, $active);
+        $item = new Item($text, $icon, $url, $active);
 
         $this->addChild($item);
 

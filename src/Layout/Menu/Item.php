@@ -24,12 +24,18 @@ class Item extends AbstractView
     /**
      * @Data
      */
+    protected $icon;
+
+    /**
+     * @Data
+     */
     protected $active;
 
-    public function __construct(string $text, string $url, bool $active)
+    public function __construct(string $text, string $icon, string $url, bool $active)
     {
         $this->text = $text;
         $this->url = $url;
+        $this->icon = $icon;
         $this->active = $active;
     }
 
