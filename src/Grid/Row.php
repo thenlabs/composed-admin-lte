@@ -10,8 +10,8 @@ use ThenLabs\ComposedViews\AbstractCompositeView;
  */
 class Row extends AbstractCompositeView
 {
-    use GridTrait;
-    use AddChildTrait;
+    use ColAndRowCommonsTrait;
+    use AddColTrait;
 
     public function getView(array $data = []): string
     {

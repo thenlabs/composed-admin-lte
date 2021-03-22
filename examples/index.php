@@ -26,7 +26,7 @@ $box1->setMainText('100');
 $box1->setSecondaryText('my secondary text');
 $box1->setIcon('bag');
 
-$grid1 = (new Grid)
+$grid = (new Grid)
     ->row()
         ->col('col-lg-3 col-6')
             ->addChild($box1)
@@ -34,7 +34,7 @@ $grid1 = (new Grid)
     ->end()
 ;
 
-$page->main->addChild($grid1);
+$page->main->addChild($grid);
 
 $page->footer->setLeftContent('My <strong>Footer Left Content</strong>');
 $page->footer->setRightContent('My Footer Right Content');

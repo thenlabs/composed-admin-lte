@@ -8,26 +8,8 @@ use ThenLabs\ComposedViews\AbstractCompositeView;
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
-trait GridTrait
+trait ColAndRowCommonsTrait
 {
-    public function row(): Row
-    {
-        $row = new Row;
-
-        $this->addChild($row);
-
-        return $row;
-    }
-
-    public function col(string $class): Col
-    {
-        $col = new Col($class);
-
-        $this->addChild($col);
-
-        return $col;
-    }
-
     public function end(): AbstractCompositeView
     {
         return $this->getParent();
