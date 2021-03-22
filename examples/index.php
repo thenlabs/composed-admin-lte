@@ -26,11 +26,21 @@ $box1->setMainText('100');
 $box1->setSecondaryText('my secondary text');
 $box1->setIcon('bag');
 
+$box2 = clone $box1;
+$box2->setBackgroundColor('success');
+
+$box3 = clone $box1;
+$box3->setBackgroundColor('warning');
+
+$box4 = clone $box1;
+$box4->setBackgroundColor('danger');
+
 $grid = (new Grid)
     ->row()
-        ->col('col-lg-3 col-6')
-            ->addChild($box1)
-        ->end()
+        ->col('col-lg-3 col-6')->addChild($box1)->end()
+        ->col('col-lg-3 col-6')->addChild($box2)->end()
+        ->col('col-lg-3 col-6')->addChild($box3)->end()
+        ->col('col-lg-3 col-6')->addChild($box4)->end()
     ->end()
 ;
 
