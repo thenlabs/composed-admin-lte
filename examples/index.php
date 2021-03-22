@@ -4,7 +4,9 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 use ThenLabs\ComposedAdminLte\Layout;
 use ThenLabs\ComposedAdminLte\Grid;
+use ThenLabs\ComposedAdminLte\Card;
 use ThenLabs\ComposedAdminLte\Dashboard\SmallBox;
+use ThenLabs\ComposedViews\TextView;
 
 $page = new Layout;
 $page->setBasePath('/assets/');
@@ -36,12 +38,19 @@ $box3->setStyle('warning');
 $box4 = clone $box1;
 $box4->setStyle('danger');
 
+$card1 = new Card;
+$card1->setStyle('navy');
+$card1->setTitle('My card title');
+
 $grid = (new Grid)
     ->row()
         ->col('col-lg-3 col-6')->addChild($box1)->end()
         ->col('col-lg-3 col-6')->addChild($box2)->end()
         ->col('col-lg-3 col-6')->addChild($box3)->end()
         ->col('col-lg-3 col-6')->addChild($box4)->end()
+    ->end()
+    ->row()
+        ->col('col-12')->addChild($card1)->end()
     ->end()
 ;
 
