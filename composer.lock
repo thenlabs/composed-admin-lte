@@ -950,16 +950,16 @@
         },
         {
             "name": "thenlabs/components",
-            "version": "v1.0.11",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thenlabs/components.git",
-                "reference": "1e2e90e5b7ec4f8404f06616e056862d0cfe71f6"
+                "reference": "5bbcc6d7aa4a0831d65b74eb2e87bca36bd2d32a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thenlabs/components/zipball/1e2e90e5b7ec4f8404f06616e056862d0cfe71f6",
-                "reference": "1e2e90e5b7ec4f8404f06616e056862d0cfe71f6",
+                "url": "https://api.github.com/repos/thenlabs/components/zipball/5bbcc6d7aa4a0831d65b74eb2e87bca36bd2d32a",
+                "reference": "5bbcc6d7aa4a0831d65b74eb2e87bca36bd2d32a",
                 "shasum": ""
             },
             "require": {
@@ -990,9 +990,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thenlabs/components/issues",
-                "source": "https://github.com/thenlabs/components/tree/v1.0.11"
+                "source": "https://github.com/thenlabs/components/tree/v1.1.0"
             },
-            "time": "2021-02-26T21:04:57+00:00"
+            "time": "2021-03-22T00:06:22+00:00"
         },
         {
             "name": "thenlabs/composed-views",
@@ -1239,16 +1239,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.18.3",
+            "version": "v2.18.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "ab99202fccff2a9f97592fbe1b5c76dd06df3513"
+                "reference": "06f764e3cb6d60822d8f5135205f9d32b5508a31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ab99202fccff2a9f97592fbe1b5c76dd06df3513",
-                "reference": "ab99202fccff2a9f97592fbe1b5c76dd06df3513",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/06f764e3cb6d60822d8f5135205f9d32b5508a31",
+                "reference": "06f764e3cb6d60822d8f5135205f9d32b5508a31",
                 "shasum": ""
             },
             "require": {
@@ -1331,7 +1331,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.18.3"
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v2.18.4"
             },
             "funding": [
                 {
@@ -1339,7 +1339,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-10T19:39:05+00:00"
+            "time": "2021-03-20T14:52:33+00:00"
         },
         {
             "name": "myclabs/deep-copy",

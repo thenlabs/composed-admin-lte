@@ -3,6 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use ThenLabs\ComposedAdminLte\Layout;
+use ThenLabs\ComposedAdminLte\Grid;
 use ThenLabs\ComposedAdminLte\Dashboard\SmallBox;
 
 $page = new Layout;
@@ -25,7 +26,15 @@ $box1->setMainText('100');
 $box1->setSecondaryText('my secondary text');
 $box1->setIcon('bag');
 
-$page->main->addChild($box1);
+$grid1 = (new Grid)
+    ->row()
+        ->col('col-lg-3 col-6')
+            ->addChild($box1)
+        ->end()
+    ->end()
+;
+
+$page->main->addChild($grid1);
 
 $page->footer->setLeftContent('My <strong>Footer Left Content</strong>');
 $page->footer->setRightContent('My Footer Right Content');
