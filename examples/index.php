@@ -5,6 +5,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 use ThenLabs\ComposedAdminLte\Layout;
 use ThenLabs\ComposedAdminLte\Grid;
 use ThenLabs\ComposedAdminLte\Card;
+use ThenLabs\ComposedAdminLte\Button;
 use ThenLabs\ComposedAdminLte\Dashboard\SmallBox;
 use ThenLabs\ComposedViews\TextView;
 
@@ -38,9 +39,15 @@ $box3->setStyle('warning');
 $box4 = clone $box1;
 $box4->setStyle('danger');
 
+$button1 = new Button;
+$button1->setStyle('primary');
+$button1->setText('My Button');
+
 $card1 = new Card;
 $card1->setStyle('navy');
 $card1->setTitle('My card title');
+$card1->body->addChild(new TextView('<p>My card body</p>'));
+$card1->footer->addChild($button1);
 
 $grid = (new Grid)
     ->row()
