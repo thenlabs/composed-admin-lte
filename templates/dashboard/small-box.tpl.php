@@ -1,5 +1,5 @@
             <!-- small box -->
-            <div class="small-box bg-<?= $this->backgroundColor ?>">
+            <div class="small-box bg-<?= $this->style ?>">
               <div class="inner">
                 <h3><?= $this->mainText ?></h3>
 

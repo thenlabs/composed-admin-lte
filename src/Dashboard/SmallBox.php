@@ -39,7 +39,7 @@ class SmallBox extends AbstractView
     /**
      * @Data(values={"info", "success", "warning", "danger"})
      */
-    protected $backgroundColor = 'info';
+    protected $style = 'info';
 
     public function getView(array $data = []): string
     {

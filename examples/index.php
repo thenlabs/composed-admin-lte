@@ -27,13 +27,13 @@ $box1->setSecondaryText('my secondary text');
 $box1->setIcon('bag');
 
 $box2 = clone $box1;
-$box2->setBackgroundColor('success');
+$box2->setStyle('success');
 
 $box3 = clone $box1;
-$box3->setBackgroundColor('warning');
+$box3->setStyle('warning');
 
 $box4 = clone $box1;
-$box4->setBackgroundColor('danger');
+$box4->setStyle('danger');
 
 $grid = (new Grid)
     ->row()
