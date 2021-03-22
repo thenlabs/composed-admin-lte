@@ -5,12 +5,15 @@ namespace ThenLabs\ComposedAdminLte\Dashboard;
 
 use ThenLabs\ComposedViews\AbstractView;
 use ThenLabs\ComposedViews\Annotation\Data;
+use ThenLabs\ComposedAdminLte\Traits\StyleTrait;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
  */
 class SmallBox extends AbstractView
 {
+    use StyleTrait;
+
     /**
      * @Data
      */
@@ -35,11 +38,6 @@ class SmallBox extends AbstractView
      * @Data
      */
     protected $linkText = 'More info';
-
-    /**
-     * @Data(values={"info", "success", "warning", "danger"})
-     */
-    protected $style = 'info';
 
     public function getView(array $data = []): string
     {

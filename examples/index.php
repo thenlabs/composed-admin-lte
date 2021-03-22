@@ -25,6 +25,7 @@ $box1 = new SmallBox;
 $box1->setMainText('100');
 $box1->setSecondaryText('my secondary text');
 $box1->setIcon('bag');
+$box1->setStyle('info');
 
 $box2 = clone $box1;
 $box2->setStyle('success');
